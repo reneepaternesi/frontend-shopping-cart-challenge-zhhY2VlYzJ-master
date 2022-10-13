@@ -1,0 +1,11 @@
+{
+  "products": [
+    { "name": "Shirt", "id": "X7R2OPX", "price": 20, "desciption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales semper elit sit amet interdum. Praesent volutpat sed elit vel consectetur. Nulla tempus tincidunt ex, sit amet semper ipsum imperdiet varius. In rutrum aliquam nisl, sagittis faucibus felis bibendum id." },
+    { "name": "Mug", "id": "X2G2OPZ", "price": 5, "desciption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales semper elit sit amet interdum. Praesent volutpat sed elit vel consectetur. Nulla tempus tincidunt ex, sit amet semper ipsum imperdiet varius. In rutrum aliquam nisl, sagittis faucibus felis bibendum id." },
+    { "name": "Cap", "id": "X3W2OPY", "price": 10, "desciption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales semper elit sit amet interdum. Praesent volutpat sed elit vel consectetur. Nulla tempus tincidunt ex, sit amet semper ipsum imperdiet varius. In rutrum aliquam nisl, sagittis faucibus felis bibendum id." }
+  ],
+  "discounts": [
+    { "name": "2-for-1", "discountAmount": 0.5, "minQuantityRequired": 2, "products": ["X2G2OPZ"]},
+    { "name": "bulk", "discountAmount": 0.05, "minQuantityRequired": 3, "products": ["X7R2OPX"]}
+  ]
+}

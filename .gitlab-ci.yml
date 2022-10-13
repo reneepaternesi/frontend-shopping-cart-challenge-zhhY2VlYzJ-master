@@ -1,0 +1,52 @@
+# Official framework image. Look for the different tagged releases at:
+# https://hub.docker.com/r/library/node/tags/
+image: node:16
+
+stages:
+  - dependencies
+  - build
+  - test
+
+# Cache dependencies to faster builds
+.node_cache:
+  cache:
+    key:
+      files:
+        - package-lock.json
+      prefix: npm
+    paths:
+      - node_modules
+
+.node_cache_pull:
+  extends: .node_cache
+  cache:
+    policy: pull
+
+# Steps
+
+## Dependencies
+
+dependencies:
+  extends: .node_cache
+  stage: dependencies
+  script:
+    - npm install
+
+## Build
+
+build:
+  extends: .node_cache_pull
+  stage: build
+  script:
+    - npm run build
+  artifacts:
+    paths:
+      - dist
+
+## Test
+
+test:
+  extends: .node_cache_pull
+  stage: test
+  script:
+    - npm run test
