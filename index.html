@@ -1,0 +1,168 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#7350FF" />
+    <link rel="manifest" href="/manifest.json" />
+    <title>Cabify Checkout Challenge</title>
+  </head>
+  <body>
+    <div id="root">
+      <main class="App">
+        <section class="products">
+          <h1 class="main">Shopping cart</h1>
+          <ul class="products-list tableHead">
+            <li class="products-list-title row">
+              <div class="col-product">Product details</div>
+              <div class="col-quantity">Quantity</div>
+              <div class="col-price">Price</div>
+              <div class="col-total">Total</div>
+            </li>
+          </ul>
+          <form id="product_list">
+            <ul class="products-list">
+              <li class="product row" aria-label="product_row">
+                <div class="col-product">
+                  <figure class="product-image" id="X7R2OPX_figure">
+                    <img src="/X7R2OPX_thumb.png" alt="Shirt" />
+                    <div class="product-description">
+                      <h1>Shirt</h1>
+                      <p class="product-code">Product code X7R2OPX</p>
+                    </div>
+                  </figure>
+                </div>
+                <div class="col-quantity">
+                  <button class="count" id="X7R2OPX_substract">-</button>
+                  <input
+                    type="number"
+                    class="product-quantity"
+                    name="X7R2OPX_quantity"
+                    id="X7R2OPX_quantity"
+                    value="3"
+                    min="0"
+                    aria-label="Shirt Quantity"
+                  />
+                  <button class="count" id="X7R2OPX_add">+</button>
+                </div>
+                <div class="col-price">
+                  <span class="product-price" id="X7R2OPX_unit">20 €</span>
+                </div>
+                <div class="col-total">
+                  <span class="product-price" id="X7R2OPX_total">60 €</span>
+                </div>
+              </li>
+              <li class="product row" aria-label="product_row">
+                <div class="col-product">
+                  <figure class="product-image" id="X2G2OPZ_figure">
+                    <img src="/X2G2OPZ_thumb.png" alt="Mug" />
+                    <div class="product-description">
+                      <h1>Mug</h1>
+                      <p class="product-code">Product code X2G2OPZ</p>
+                    </div>
+                  </figure>
+                </div>
+                <div class="col-quantity">
+                  <button class="count" id="X2G2OPZ_substract">-</button>
+                  <input
+                    type="number"
+                    class="product-quantity"
+                    name="X2G2OPZ_quantity"
+                    id="X2G2OPZ_quantity"
+                    value="2"
+                    min="0"
+                    aria-label="Mug Quantity"
+                  />
+                  <button class="count" id="X2G2OPZ_add">+</button>
+                </div>
+                <div class="col-price">
+                  <span class="product-price" id="X2G2OPZ_unit">5 €</span>
+                </div>
+                <div class="col-total">
+                  <span class="product-price" id="X2G2OPZ_total">10 €</span>
+                </div>
+              </li>
+              <li class="product row" aria-label="product_row">
+                <div class="col-product">
+                  <figure class="product-image" id="X3W2OPY_figure">
+                    <img src="/X3W2OPY_thumb.png" alt="Cap" />
+                    <div class="product-description">
+                      <h1>Cap</h1>
+                      <p class="product-code">Product code X3W2OPY</p>
+                    </div>
+                  </figure>
+                </div>
+                <div class="col-quantity">
+                  <button class="count" id="X3W2OPY_substract">-</button>
+                  <input
+                    type="number"
+                    class="product-quantity"
+                    name="X3W2OPY_quantity"
+                    id="X3W2OPY_quantity"
+                    value="4"
+                    min="0"
+                    aria-label="Cap Quantity"
+                  />
+                  <button class="count" id="X3W2OPY_add">+</button>
+                </div>
+                <div class="col-price">
+                  <span class="product-price" id="X3W2OPY_unit">10 €</span>
+                </div>
+                <div class="col-total">
+                  <span class="product-price" id="X3W2OPY_total">40 €</span>
+                </div>
+              </li>
+            </ul>
+          </form>
+        </section>
+        <aside class="summary">
+          <h1 class="main">Order Summary</h1>
+          <ul class="summary-items wrapper border">
+            <li>
+              <span class="summary-items-number" id="checkout_quantity">0 Items</span>
+              <span class="summary-items-price" id="checkout_total">0 €</span>
+            </li>
+          </ul>
+          <div class="summary-discounts wrapper-half border">
+            <h2>Discounts</h2>
+            <ul>
+              <li><span>x3 Shirt offer</span><span id="X7R2OPX_discount">- 0 €</span></li>
+              <li><span>2x1 Mug offer</span><span id="X2G2OPZ_discount">- 0 €</span></li>
+            </ul>
+          </div>
+          <div class="summary-total wrapper">
+            <ul>
+              <li>
+                <span class="summary-total-cost">Total cost</span
+                ><span class="summary-total-price" id="checkout_finalTotal">0 €</span>
+              </li>
+            </ul>
+            <button type="submit" form="product_list" id="checkout_btn">Checkout</button>
+          </div>
+        </aside>
+      </main>
+      <!-- product modal -->
+      <div class="modal hidden" id="product-modal">
+        <section class="product-img">
+          <img id="product_img" src="" alt="">
+        </section>
+        <aside class="product-info">
+          <div class="close-btn" id="close_btn">
+            <img src="/closeIcon.png" alt="close"/>
+          </div>
+          <h1 class="main product-header">
+            <span id="product_name"> Shirt</span>
+            <span id="product_price"> 20€ </span>
+          </h1>
+          <p class="main" id="product_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales semper elit sit amet interdum. Praesent volutpat sed elit vel consectetur. Nulla tempus tincidunt ex, sit amet semper ipsum imperdiet varius. In rutrum aliquam nisl, sagittis faucibus felis bibendum id.</p>
+          <div class="product-summary wrapper">
+            <div class="product-code">Product code <span id="product_code">X7R2OPX</span></div>
+            <button class="add-to-cart-btn">Add to cart</button>
+        </div>
+        </div>
+        </aside>
+      </div>
+    </div>
+    <script type="module" src="/src/main"></script>
+  </body>
+</html>
